@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <script>
+        /*1. A un trabajador le pagan según sus horas trabajadas y una tarifa de pago
+            por hora. Si la cantidad de horas trabajadas es mayor a 40 horas, la
+            tarifa se incrementa en un 50% para las horas extras. Escribir un
+            algoritmo que calcule el salario del trabajador dadas las horas trabajadas
+            y la tarifa.*/
+        const darSalario = (horas = undefined, tarifa = undefined) =>{
+            if(!horas) return console.warn("Ingrese las horas, numero vacio");
+
+            if(typeof horas !== "number") return console.error(`El valor de horas ingresado ${horas}, No es válido`); 
+
+            if (Math.sign(horas)=== -1) return console.error("El valor no puede ser negativo");
+
+            if(!tarifa) return console.warn("Ingrese la tarifa.");
+
+            if(typeof tarifa !== "number") return console.error(`El valor de Tarifa ingresado ${tarifa}, No es válido`); 
+
+            if (Math.sign(tarifa)=== -1) return console.error("El valor no puede ser negativo");
+
+            return (horas > 40)
+            ?console.log(`Horas trabajadas: ${horas} \nTarifa: ${tarifa} \nSalario: ${(((tarifa*0.5) + tarifa)*(horas))}`)
+            :console.log(`Horas trabajadas: ${horas} \nTarifa: ${tarifa} \nSalario: ${(horas*tarifa)}`);
+
+        }
+
+        darSalario("s",85);
+        darSalario(8,"t");
+        darSalario(8,80);
+        darSalario(41,80);
+        darSalario(0,80);
+        darSalario(12,0);
+        darSalario(-2,80);
+
+    </script>
+</body>
+</html>
