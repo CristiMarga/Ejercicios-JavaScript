@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <h1>Ejercicio 10</h1>
+    <script>
+        /*10. Dadas 3 longitudes, escribir un algoritmo que determine mediante un
+        mensaje si tales longitudes forman un triangulo:
+         equilátero (cuando sus tres lados son iguales), 
+         isósceles (cuando dos de sus lados son iguales) o
+        escaleno (cuando sus tres lados son diferentes), o no forman triangulo
+        (cada lado tiene que ser menor que la suma de los otros dos).*/
+        const triangulo = (ladoA = undefined, ladoB = undefined, ladoC = undefined) =>{
+            if(!ladoA && ladoB && ladoC) return console.warn("Ingrese el lado, valor vacio");
+
+            if(typeof (ladoA && ladoB && ladoC) !== "number") return console.error(`El valor del lado ingresado ${ladoA,ladoB,ladoC}, No es válido`); 
+
+            if (Math.sign((ladoA && ladoB && ladoC))=== -1) return console.error("El valor no puede ser negativo");
+
+            if (ladoA === ladoB && ladoB === ladoC && ladoA === ladoC) {
+                return console.log(`Lado A:${ladoA} \nLado B:${ladoB} \nLado C:${ladoC} \nEs un Triangulo Equilátero`)
+            } else if(ladoA === ladoB || ladoB === ladoC || ladoA === ladoC) {
+                return console.log(`Lado A:${ladoA} \nLado B:${ladoB} \nLado C:${ladoC} \nEs un Triangulo Isósceles`)
+            } else if (ladoA != ladoB && ladoB != ladoC && ladoA != ladoC) {
+                return console.log(`Lado A:${ladoA} \nLado b:${ladoB} \nLado C:${ladoC} \nEs un Triangulo Escaleno`)
+            } else{
+                return console.log("No es un triangulo")
+            }
+        }
+
+        triangulo("25","4","9");
+        triangulo(10,10,10);
+        triangulo(10,10,9);
+        triangulo(5,7,9);
+
+    </script>
+</body>
+</html>
