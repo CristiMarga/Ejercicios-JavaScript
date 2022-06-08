@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <h1>Ejercicio 6</h1>
+    <script>
+        /*6. Escribir un algoritmo que lea las horas trabajadas de una persona y la
+        tarifa de pago para calcular su salario e imprimirlo.*/
+        const salario = (horasT = undefined, tarifa = undefined) =>{
+            if(!horasT) return console.warn("Ingrese las horas trabajadas, valor vacio");
+
+            if(typeof horasT !== "number") return console.error(`El valor de las horas ingresada ${horasT}, No es válido`); 
+
+            if (Math.sign(horasT)=== -1) return console.error("El valor no puede ser negativo");
+
+            if(!tarifa) return console.warn("Ingrese la Tarifa de pago, valor vacio");
+
+            if(typeof tarifa !== "number") return console.error(`El valor de la tarifa de pago ingresada ${tarifa}, No es válido`); 
+
+            if (Math.sign(tarifa)=== -1) return console.error("El valor no puede ser negativo");
+            
+            return console.log(`Horas trabajadas: ${horasT} \nTarifa de pago: ${tarifa} \nSalario: ${(horasT*tarifa)}`);
+        }
+
+        salario();
+        salario("false");
+        salario(0.5);
+        salario(10,80);
+        salario(8,200);
+        salario(-100);
+
+    </script>
+</body>
+</html>
