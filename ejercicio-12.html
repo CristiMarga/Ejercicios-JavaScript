@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body>
+    <h1>Ejercicio 12</h1>
+    <script>
+        /*12. Katthy organiza una fiesta en la cual una computadora controla el
+            ingreso mediante 5 claves. Si se ingresa al menos una clave incorrecta la
+            computadora imprimirá "TE EQUIVOCASTE DE FIESTA" y no permitirá el
+            ingreso. Si las 5 claves son correctas imprimirá "BIENVENIDO A LA FIESTA".
+            Escribir un algoritmo que realice lo anterior.
+            Las Claves son:
+            1: "TIENES"
+            2: "QUE SER"
+            3: "INVITADO"
+            4: "PARA"
+            5: "INGRESAR"*/
+        const ingresarClave = (clave1 = "",clave2 = "",
+                            clave3 = "",clave4 = "",
+                            clave5 = "") =>{
+            if(!clave1) return console.warn("Ingresa la Clave 1, cadena vacia");
+
+            if(typeof clave1 !== "string") return console.error("La clave ingresada No es válido.");
+
+            if(!clave2) return console.warn("Ingresa la Clave 2, cadena vacia");
+
+            if(typeof clave2 !== "string") return console.error("La clave ingresada No es válido.");
+
+            if(!clave3) return console.warn("Ingresa la Clave 3, cadena vacia");
+
+            if(typeof clave3 !== "string") return console.error("La clave ingresada No es válido.");
+
+            if(!clave4) return console.warn("Ingresa la Clave 4, cadena vacia");
+
+            if(typeof clave4 !== "string") return console.error("La clave ingresada No es válido.");
+
+            if(!clave5) return console.warn("Ingresa la Clave 5, cadena vacia");
+
+            if(typeof clave5 !== "string") return console.error("La clave ingresada No es válido.");
+
+            if (clave1 === "TIENES" && clave2 === "QUE SER" && clave3 === "INVITADO"
+                && clave4 === "PARA" && clave5 === "INGRESAR") {
+                return console.log("BIENVENIDO A LA FIESTA")
+            } else{
+                return console.log("TE EQUIVOCASTE DE FIESTA")
+            }
+        }
+
+            ingresarClave();
+            ingresarClave("TIENES","QUE SER");
+            ingresarClave("TIENES","QUE SER","INVITADO");
+            ingresarClave(5000,11000);
+            ingresarClave("TIENES","QUE SER","INVITADO","PARA","INGRESAR");
+            ingresarClave("TIENES","QUE SE","INVITADO","PARA","INGRESAR");
+            ingresarClave("TIENES","QUE SER","INVITADO","PARA","HOLA");
+
+    </script>
+</body>
+</html>
