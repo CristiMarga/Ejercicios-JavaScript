@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+    <h1>Ejercicio 13</h1>
+    <script>
+        /*13. Escribir un algoritmo que calcule las raíces de una ecuación
+            cuadrática cuya forma canónica es:
+            Ax**2 + By + C = 0
+            Solo se calcularán raíces reales. si el discriminante en menor de 0,
+            imprimir un mensaje que indique que existen dos raíces imaginarias. Los
+            coeficientes A,B,C serán ingresados.*/
+        const calcularRaices = (sueldo = undefined, monto = undefined) =>{
+            if(!sueldo) return console.warn("Ingrese el sueldo, valor vacio");
+
+            if(typeof sueldo !== "number") return console.error(`El valor del sueldo ingresado ${sueldo}, No es válido`); 
+
+            if (Math.sign(sueldo)=== -1) return console.error("El valor no puede ser negativo");
+            
+            if(!monto) return console.warn("Ingrese el monto, valor vacio");
+
+            if(typeof monto !== "number") return console.error(`El valor del monto ingresado ${monto}, No es válido`); 
+
+            if (Math.sign(monto)=== -1) return console.error("El valor no puede ser negativo");
+
+            if (monto >= 10000) {
+                return console.log(`Sueldo mensual: ${sueldo} \nMonto de venta:${monto} \nComisión 15%: ${(monto * 0.15)} \nSueldo Total: ${((monto*0.15) + sueldo)}`)
+            } else if(monto >= 5000 && monto < 10000) {
+                return console.log(`Sueldo mensual: ${sueldo} \nMonto de venta:${monto} \nComisión 5%: ${(monto * 0.05)} \nSueldo Total: ${((monto*0.05) + sueldo)}`)
+            } else if (monto < 5000) {
+                return console.log(`Sueldo mensual: ${sueldo} \nMonto de venta:${monto} \nNo hay comisión`)
+            } else{
+                return console.log("No existe la comisión")
+            }
+        }
+
+            sueldoTotal();
+            sueldoTotal("false");
+            sueldoTotal(5000,11000);
+            sueldoTotal(3000,6000);
+            sueldoTotal(3500,1000);
+            sueldoTotal(-100);
+
+    </script>
+</body>
+</html>
