@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <h1>Ejercicio 7</h1>
+    <script>
+        /*Escribir el algoritmo que permita emitir la factura correspondiente a una
+        compra de un articulo determinado, del que se adquieren una o varias
+        unidades. El IVA es del 15% y si el precio neto ( precio venta mas IVA) es
+        mayor de 50.00 pesos se debe realizar un descuento del 5%.*/
+        const factura = (precio = undefined, cantidad = undefined) =>{
+            if(!precio) return console.warn("Ingrese el precio, valor vacio");
+
+            if(typeof precio !== "number") return console.error(`El valor del precio ingresado ${precio}, No es válido`); 
+
+            if (Math.sign(precio)=== -1) return console.error("El valor no puede ser negativo");
+
+            if(!cantidad) return console.warn("Ingrese la cantidad, valor vacio");
+
+            if(typeof cantidad !== "number") return console.error(`El valor de la cantidad ingresada ${cantidad}, No es válido`); 
+
+            if (Math.sign(cantidad)=== -1) return console.error("El valor no puede ser negativo");
+
+            let total = (precio * cantidad);
+            let iva = (total * 0.15);
+            let granTotal =( total + iva);
+
+            return (granTotal > 50)
+            ?console.log(`Total + IVA (15%): ${granTotal} \nDescuento del 5% : ${(0.05*granTotal)} \nGran Total: ${(granTotal-(0.05*granTotal))}`)
+            :console.log(`Gran total + IVA (15%): ${granTotal}`);
+        }
+
+        factura();
+        factura("false");
+        factura(150);
+        factura(10,3);
+        factura(100,3);
+        factura(-100);
+
+    </script>
+</body>
+</html>
