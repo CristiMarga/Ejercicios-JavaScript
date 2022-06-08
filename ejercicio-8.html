@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <h1>Ejercicio 8</h1>
+    <script>
+        /*Escribir el algoritmo que muestre el mensaje de acuerdo a la edad
+        ingresada: Si la edad es de 0 a 10 años “niño”, si la edad es de 11 a 14
+        años “púber” , si la edad es de 15 a 18 años “ adolescente” , si la edad
+        es de 19 a 25 años “joven” , si la edad es de 26 a 65 años “ adulto” , si
+        la edad es mayor de 65 “anciano”.*/
+        const Edad = (edad = undefined) =>{
+            if(!edad) return console.warn("Ingrese la edad, valor vacio");
+
+            if(typeof edad !== "number") return console.error(`El valor de la edad ingresada ${edad}, No es válido`); 
+
+            if (Math.sign(edad)=== -1) return console.error("El valor no puede ser negativo");
+
+            if (edad >= 0 && edad <= 10) {
+                return console.log(`Edad:${edad} \nEres Niñ@`)
+            } else if(edad >= 11 && edad <= 14) {
+                return console.log(`Edad:${edad} \nEres Púber`)
+            } else if (edad >= 15 && edad <= 18) {
+                return console.log(`Edad:${edad} \nEres Adolescente`)
+            } else if(edad >= 19 && edad <= 25) {
+                return console.log(`Edad:${edad} \nEres Joven`)
+            } else if (edad >= 26 && edad <= 65) {
+                return console.log(`Edad:${edad} \nEres Adulto`)
+            } else if(edad >= 65) {
+                return console.log(`Edad:${edad} \nEres Anciano`)
+            }
+        }
+
+            Edad();
+            Edad("false");
+            Edad(7);
+            Edad(12);
+            Edad(18);
+            Edad(22);
+            Edad(30);
+            Edad(50);
+            Edad(70);
+            Edad(-100);
+
+    </script>
+</body>
+</html>
