@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h1>Ejercicio 4</h1>
+    <script>
+        /*4. Escribir un algoritmo que lea un tiempo en segundos y que calcule los
+            segundos restantes que le correspondan para convertirse exactamente en
+            minutos.*/
+        const calcularMinutos = (segundos = undefined) =>{
+            if(!segundos) return console.warn("Ingrese los segundod, valor vacio");
+            
+            if(typeof segundos !== "number") return console.error(`El valor de segundos ingresado "${segundos}", No es válido`); 
+
+            if (Math.sign(segundos)=== -1) return console.error("El valor no puede ser negativo");
+
+            let minutos = Math.trunc(((segundos * 1) / 60));
+
+            let segundosRes = (60 - (segundos % 60));
+
+            return (segundosRes === 60)
+            ?console.log(`Exactamente son ${minutos} minutos, no restan segundos.`)
+            :console.log(`Restan ${segundosRes} segundos para ${((segundos + segundosRes)/60)} minutos.`);
+        }
+
+        calcularMinutos();
+        calcularMinutos("60");
+        calcularMinutos(150);
+        calcularMinutos(60);
+        calcularMinutos(180);
+    </script>
+</body>
+</html>
