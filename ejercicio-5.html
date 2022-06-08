@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h1>Ejercicio 5</h1>
+    <script>
+        /*5. Escribir un algoritmo que lea un tiempo en minutos y que calcule los días,
+        horas y minutos que le corresponden.*/
+        const calcularTiempo = (darMinutos = undefined) =>{
+            if(!darMinutos) return console.warn("Ingrese los minutos, valor vacio");
+            
+            if(typeof darMinutos !== "number") return console.error(`El valor de minutos ingresado "${darMinutos}", No es válido`); 
+
+            if (Math.sign(darMinutos)=== -1) return console.error("El valor no puede ser negativo");
+
+            let minutos = 0, dias = 0, horas = 0;
+
+            while (darMinutos > 0) {
+                if (darMinutos >= 1440) {
+                    dias = dias + 1;
+                    darMinutos = darMinutos - 1440;
+                } else if(darMinutos >= 60) {
+                    horas = horas + 1;
+                    darMinutos = darMinutos - 60;
+                } else {
+                    minutos = minutos + 1;
+                    darMinutos = darMinutos - 1;
+                }
+            }
+            return console.log(`Días:${dias} \nHoras: ${horas} \nMinutos: ${minutos}`)
+        }
+
+        calcularTiempo();
+        calcularTiempo("60");
+        calcularTiempo(150);
+        calcularTiempo(60);
+        calcularTiempo(1440);
+        calcularTiempo(2990);
+    </script>
+</body>
+</html>
