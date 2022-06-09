@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 19</title>
+</head>
+<body>
+    <h1>Ejercicio 19</h1>
+    <script>
+        /*19. Dado un número n, escribir un algoritmo que determine la suma de sus
+            dígitos.*/
+        const sumaDigitos = () =>{
+            let numero= undefined, arr=[], suma = 0;
+                numero = prompt("Ingresa el número");
+                //arr = numero.split(' ');
+            arr = Array.from(numero);
+                //console.log(arr);
+            for (let i = 0; i < arr.length; i++) {
+                suma = suma + parseInt(arr[i]);
+            }
+            console.log(`Número: ${numero} \nSuma de sus digitos: ${arr.join(" + ")} es igual a ${suma}`);        
+        }
+        sumaDigitos();
+    </script>
+</body>
+</html>
