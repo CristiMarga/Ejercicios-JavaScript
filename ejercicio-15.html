@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15</title>
+</head>
+<body>
+    <h1>Ejercicio 15</h1>
+    <script>
+        /*15. Escribir un algoritmo que permita escoger en un conjunto de números
+            naturales:
+            Cuáles son menores que 15.
+            Cuáles son mayores de 50.
+            Cuáles están comprendidos entre 25 y 50.
+            El algoritmo termina con el ingreso de un número negativo.*/
+        const numeros = () =>{
+            let numero = 0;
+            //if(!numero) return console.warn("Ingrese el número, valor vacio");
+
+            //if(typeof numero !== "number") return console.error(`El valor del número ingresado ${numero}, No es válido`);
+            
+            let a1=0,a2=0,a3=0;
+            let arr1 = [], arr2 = [], arr3 = [];
+            
+            while (numero >=0) {
+
+                numero = prompt("Ingresa un número");
+                console.log(numero);
+
+                if (numero >=0 && numero < 15) {
+                    a1 = a1 + 1;
+                    arr1.push(numero);
+                } else if(numero >= 50) {
+                    a2 = a2 + 1;
+                    arr2.push(numero);
+                } else if (numero >= 25 && numero < 50) {
+                    a3 = a3 + 1;
+                    arr3.push(numero);
+                } 
+            }//while
+            console.log(`Total de números menores que 15: ${a1} \nNúmeros menores que 15: ${arr1}`);
+            console.log(`Total de números mayores que 50: ${a2} \nNúmeros mayores que 50: ${arr2}`);
+            console.log(`Total de números entre 25 y 50: ${a3} \nNúmeros entre 25 y 50: ${arr3}`);   
+        }
+            numeros();
+
+    </script>
+</body>
+</html>
