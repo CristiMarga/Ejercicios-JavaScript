@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15</title>
+</head>
+<body>
+    <h1>Ejercicio 15</h1>
+    <script>
+        /*Calcular mediante un algoritmo repetitivo la suma de los N primeros
+            números naturales.*/
+        const sumaNumeros = () =>{
+            let numero = 0;
+            //if(!numero) return console.warn("Ingrese el número, valor vacio");
+
+            //if(typeof numero !== "number") return console.error(`El valor del número ingresado ${numero}, No es válido`);
+            
+            let contador = 0, suma = 0;
+            numero = prompt("Ingresa un número");
+            console.log(numero);
+            while (contador <= numero) {
+                suma = suma + contador;
+                console.log(contador);
+                contador++;
+
+            }//while
+            console.log(`Suma: ${suma}`); 
+        }
+            sumaNumeros();
+
+    </script>
+</body>
+</html>
