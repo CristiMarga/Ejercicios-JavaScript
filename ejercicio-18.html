@@ -29,7 +29,7 @@
                     sumaR = sumaR + parseInt(notas);
                     contR = contR + 1;
                     console.info(`Nota Reprobada: ${notas}`);
-                } else if(notas > 10 || typeof horas !== "number" || !notas){
+                } else if(notas > 10 || typeof notas !== "number" || !notas){
                     console.error("Error, ingresa la nota")
                 }
             }
