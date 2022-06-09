@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 18</title>
+</head>
+<body>
+    <h1>Ejercicio 18</h1>
+    <script>
+        /*18. Dadas N notas de un estudiante, escribir un algoritmo que calcule:
+                a) Cuántas notas tiene desaprobadas.
+                b) Cuántas aprobadas.
+                c) El promedio de notas.
+                d) El promedio de notas aprobadas y el de desaprobadas.*/
+        const darNotas = () =>{
+            let notas = 0, sumaA = 0, sumaR = 0,promedioA= 0, promedioR = 0;
+            let contA = 0, contR = 0;
+           
+            while (notas != -1) {
+                notas = prompt("Ingresa la nota");
+                
+                if (notas >= 6 && notas <= 10) {
+                    sumaA = sumaA + parseInt(notas);
+                    contA = contA + 1;
+                    console.info(`Nota Aprobada: ${notas}`);
+                } else if(notas >= 0 && notas <= 5) {
+                    sumaR = sumaR + parseInt(notas);
+                    contR = contR + 1;
+                    console.info(`Nota Reprobada: ${notas}`);
+                } else if(notas > 10 || typeof horas !== "number" || !notas){
+                    console.error("Error, ingresa la nota")
+                }
+            }
+            promedioA = (sumaA/contA);
+            promedioR = (sumaR/contR);
+            //console.log(sumaA,sumaR);
+            promedioTotal = ((sumaA+sumaR)/(contA+contR));
+            console.log(`Notas Reprobadas: ${contR} \nNotas Aprobadas: ${contA} 
+            \nPromedio de notas Aprobadas : ${promedioA.toFixed(1)} 
+            \nPromedio de notas Reprobadas: ${promedioR.toFixed(1)}
+            \nPromedio Total: ${promedioTotal.toFixed(1)}`);
+        }
+        darNotas();
+    /*if(!horas) return console.warn("Ingrese las horas, numero vacio");
+
+                if(typeof horas !== "number") return console.error(`El valor de horas ingresado ${horas}, No es válido`); 
+
+                if (Math.sign(horas)=== -1) return console.error("El valor no puede ser negativo");
+
+                if(!tarifa) return console.warn("Ingrese la tarifa.");
+
+                if(typeof tarifa !== "number") return console.error(`El valor de Tarifa ingresado ${tarifa}, No es válido`); 
+
+                if (Math.sign(tarifa)=== -1) return console.error("El valor no puede ser negativo");*/
+    </script>
+</body>
+</html>
