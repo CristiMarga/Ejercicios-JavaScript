@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 27</title>
+</head>
+<body>
+    <h1>Ejercicio 27</h1>
+    <script>
+        /*27. Escribir un algoritmo que determine cuántos trabajadores recibirán
+        un salario mayor o igual a 500, dadas la tarifa y las horas trabajadas.*/
+        const salarioMayorA500 = () =>{
+            let horas=undefined,tarifa= undefined;
+            let contador = 0;
+                while(horas != 0 && tarifa != 0){
+                    horas = prompt("Ingrese las Horas Trabajadas");
+                    tarifa = prompt("Ingrese la Tarifa");
+                    let h = parseInt(horas);
+                    let t = parseInt(tarifa);
+                    let salario = (h*t);
+                    console.log(`Horas Trabajadas: ${h} \nTarifa: ${t} \nSalario: ${salario}`);
+                    if (salario >= 500){
+                        contador++;
+                    }           
+                }
+                console.info(`Números de trabajadores recibirán un salario mayor o igual a 500: ${contador}`);
+        }
+        salarioMayorA500();
+    </script>
+</body>
+</html>
