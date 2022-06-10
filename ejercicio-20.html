@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 20</title>
+</head>
+<body>
+    <h1>Ejercicio 20</h1>
+    <script>
+        /*20. Realizar un algoritmo que permita pedir 50 números naturales y
+determine e imprima cuántos son pares, impares, positivos y negativos.*/
+        const numeros= () =>{
+            let numero = undefined, contador = 1, arr = [];
+            let cont1 = 0, cont2 = 0,cont3 = 0, cont4 = 0;
+           
+            while (contador>=1 && contador <= 5) {
+                numero = prompt("Ingresa un número");
+                arr.push(numero);
+                //console.log(arr);
+                contador++;
+            }
+            let arrayNumber = arr.map(Number);
+            //console.log(arrayNumber);
+            for (let i = 0; i < arrayNumber.length; i++) {
+                if ((arrayNumber[i] % 2) === 0 && Math.sign(arrayNumber[i]) != -1) {
+                    cont1 = cont1 + 1;
+                } else if((arrayNumber[i] % 2) === 1 && Math.sign(arrayNumber[i]) != -1) {
+                    cont2 = cont2 + 1;
+                } 
+            }
+            for (let j = 0; j < arrayNumber.length; j++) {
+                if(Math.sign(arrayNumber[j]) === 1 && Math.sign(arrayNumber[j]) != -1){
+                    cont3 = cont3 + 1;
+                } else if(Math.sign(arrayNumber[j]) === -1 && Math.sign(arrayNumber[j]) != 1) {
+                    cont4 = cont4 + 1;
+                }
+            }
+            console.log(`Números: ${arrayNumber}
+                        \nNúmeros Pares: ${cont1} 
+                        \nNúmeros Impares: ${cont2} 
+                        \nNúmeros Positivos: ${cont3} 
+                        \nNúmeros Negativos: ${cont4}`);
+        }
+        numeros();
+    </script>
+</body>
+</html>
