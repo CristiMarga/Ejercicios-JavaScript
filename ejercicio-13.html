@@ -15,19 +15,7 @@
             Solo se calcularán raíces reales. si el discriminante en menor de 0,
             imprimir un mensaje que indique que existen dos raíces imaginarias. Los
             coeficientes A,B,C serán ingresados.*/
-        const calcularRaices = (sueldo = undefined, monto = undefined) =>{
-            if(!sueldo) return console.warn("Ingrese el sueldo, valor vacio");
-
-            if(typeof sueldo !== "number") return console.error(`El valor del sueldo ingresado ${sueldo}, No es válido`); 
-
-            if (Math.sign(sueldo)=== -1) return console.error("El valor no puede ser negativo");
-            
-            if(!monto) return console.warn("Ingrese el monto, valor vacio");
-
-            if(typeof monto !== "number") return console.error(`El valor del monto ingresado ${monto}, No es válido`); 
-
-            if (Math.sign(monto)=== -1) return console.error("El valor no puede ser negativo");
-
+        const calcularRaices = () =>{
             if (monto >= 10000) {
                 return console.log(`Sueldo mensual: ${sueldo} \nMonto de venta:${monto} \nComisión 15%: ${(monto * 0.15)} \nSueldo Total: ${((monto*0.15) + sueldo)}`)
             } else if(monto >= 5000 && monto < 10000) {
