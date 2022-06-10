@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 23</title>
+</head>
+<body>
+    <h1>Ejercicio 23</h1>
+    <script>
+        /*23. Escribir un algoritmo que calcule la suma y el producto de los
+        números pares comprendidos entre 20 y 400 incluyendo ambos.*/
+         const numerosPares = () => {
+             let sumaPar = 0, sumaImpar = 0,
+             productoPar=1, productoImpar=1;
+             for (let i = 20; i <= 400; i++) {
+                 if ((i % 2) === 0) {
+                     sumaPar+=i;
+                     //console.log(i);
+                 } else if ((i % 2) === 1){
+                     sumaImpar+=i;
+                 }     
+             }
+             for (let j = 20; j <= 400; j++) {
+                 if ((j % 2) === 0) {
+                     productoPar*=j;
+                 } else if ((j % 2) === 1){
+                     productoImpar*=j;
+                 }     
+             }
+             console.log(`Suma Pares: ${sumaPar} 
+                        \nSuma Impares: ${sumaImpar} 
+                        \nProducto Pares: ${productoPar} 
+                        \nProducto Impares: ${productoImpar}`);
+        }   
+        numerosPares();
+        //console.log();
+    </script>
+</body>
+</html>
