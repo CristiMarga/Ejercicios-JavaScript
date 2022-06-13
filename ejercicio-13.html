@@ -15,24 +15,16 @@
             Solo se calcularán raíces reales. si el discriminante en menor de 0,
             imprimir un mensaje que indique que existen dos raíces imaginarias. Los
             coeficientes A,B,C serán ingresados.*/
-        const calcularRaices = () =>{
-            if (monto >= 10000) {
-                return console.log(`Sueldo mensual: ${sueldo} \nMonto de venta:${monto} \nComisión 15%: ${(monto * 0.15)} \nSueldo Total: ${((monto*0.15) + sueldo)}`)
-            } else if(monto >= 5000 && monto < 10000) {
-                return console.log(`Sueldo mensual: ${sueldo} \nMonto de venta:${monto} \nComisión 5%: ${(monto * 0.05)} \nSueldo Total: ${((monto*0.05) + sueldo)}`)
-            } else if (monto < 5000) {
-                return console.log(`Sueldo mensual: ${sueldo} \nMonto de venta:${monto} \nNo hay comisión`)
-            } else{
-                return console.log("No existe la comisión")
-            }
+        const ecuacionCuadratica = (a=undefined,b=undefined,c=undefined) =>{
+            let discriminante = ((Math.pow(b,2))-(4*a*c));
+            let raiz1 = ((-(b)+(Math.sqrt(discriminante)))/(2*a)),
+            raiz2 = ((-(b)-(Math.sqrt(discriminante)))/(2*a));;
+             return (discriminante < 0) 
+                ?console.log(`Existen dos raíces imaginarias`)
+                :console.log(`Raíz 1= ${raiz1} \nRaíz 2= ${raiz2}`);    
         }
-
-            sueldoTotal();
-            sueldoTotal("false");
-            sueldoTotal(5000,11000);
-            sueldoTotal(3000,6000);
-            sueldoTotal(3500,1000);
-            sueldoTotal(-100);
+            ecuacionCuadratica(2,9,10);
+            ecuacionCuadratica(2,2,5);
 
     </script>
 </body>
