@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 28</title>
+</head>
+<body>
+    <h1>Ejercicio 28</h1>
+    <script>
+        /*28. Escribir un algoritmo que clasifique a 50 personas según su edad y
+        sexo, al final deberá escribir la 
+        -cantidad de personas masculinas mayores de edad,
+        -la cantidad de personas femeninas menores de edad, 
+        -cantidad de personas mayores y menores, 
+        -además deberá indicar el porcentaje que representan las personas mayores y las menores, de edad.*/
+        const personasSegunEdad = () =>{
+            let edad=undefined,sexo= undefined;
+            let contador = 0, contMmayor=0, contFmenor=0, contPMayores=0,
+            contPmenores=0;
+                while(contador >=0 && contador <= 5){
+                    edad = prompt("Ingrese su edad");
+                    sexo = prompt("Ingrese su sexo \nF: Femenino \nM: masculino");
+                    let e = parseInt(edad);
+                    //let s = parseInt(sexo);
+                    if (e >= 60 && sexo === "M") {
+                        contMmayor = contMmayor + 1;
+                    } 
+                    if (e >= 1 && e < 18 && sexo === "F") {
+                        contFmenor = contFmenor + 1;
+                    }
+                    if (e >= 1 && e <18) {
+                        contPmenores = contPmenores + 1;
+                    } else if (e >= 18) {
+                        contPMayores = contPMayores + 1;
+                    }
+                    contador++;       
+                }
+                pPMayores = ((contPMayores*100)/contador);
+                pPmenores = ((contPmenores*100)/contador);
+                //console.log(contador);
+                console.log(`Cantidad de personas masculinas mayores de edad: ${contMmayor} 
+                \nCantidad de personas femeninas menores: ${contFmenor} 
+                \nCantidad de personas mayores: ${contPMayores}
+                \nCantidad de personas menores: ${contPmenores}
+                \nPorcentaje de personas mayores: ${pPMayores.toFixed(1)}%
+                \nPorcentaje de personas menores: ${pPmenores.toFixed(1)}%`);        
+        }
+        personasSegunEdad();
+    </script>
+</body>
+</html>
